@@ -4,7 +4,6 @@ extern crate rubigo_pwd;
 extern crate clap;
 use clap::{App, Arg};
 use rubigo_pwd::*;
-use std::io::stdout;
 
 fn main() {
     let matches = App::new(NAME)
@@ -21,7 +20,7 @@ fn main() {
         .get_matches();
 
     if matches.is_present("logical") {
-        println!("{}", logical().display());
+        println!("{}", logical().unwrap().display());
     } else {
         // default
         println!("{}", physical());

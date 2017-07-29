@@ -14,6 +14,7 @@ working directory.";
 
 use std::path::PathBuf;
 use std::env::current_dir;
+use std::io::Result;
 
 /// Returns the logical current working directory.
 pub fn logical() -> Result<PathBuf> {

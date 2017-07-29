@@ -1,0 +1,11 @@
+[package]
+name = "rubigo-pwd"
+version = "0.1.0"
+authors = ["Patrick Elsen <pelsen@xfbs.net>"]
+
+[dependencies]
+
+[dependencies.clap]
+version = "2.25.1"
+default-features = false
+features = []

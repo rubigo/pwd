@@ -3,6 +3,15 @@ name = "rubigo-pwd"
 version = "0.1.0"
 authors = ["Patrick Elsen <pelsen@xfbs.net>"]
 
+description = "Returns the current working directory. Implementation of the POSIX pwd utility."
+documentation = "https://rubigo.github.io/coreutils/doc/rubigo_pwd"
+homepage = "https://rubigo.github.io/coreutils"
+repository = "https://github.com/rubigo/pwd"
+
+readme = "README.md"
+keywords = ["coreutils", "security", "unix", "posix", "linux"]
+categories = ["command-line-utilities", "development-tools"]
+
 [dependencies]
 
 [dependencies.clap]

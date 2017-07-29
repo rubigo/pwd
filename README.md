@@ -27,10 +27,10 @@ name | current version | description
 ## Specification
 
 Specification is adapted from the *The Open Group Base Specifications
-Issue 7*, [section XCU
-`pwd`](http://pubs.opengroup.org/onlinepubs/9699919799/nframe.html), to be as
-compatible with the POSIX standard as possible (or as practical) as well as
-existing implementations.
+Issue 7* for 
+[`pwd`](http://pubs.opengroup.org/onlinepubs/9699919799/utilities/pwd.html),
+to be as compatible with the POSIX standard as possible (or as practical) as
+well as existing implementations.
 
 ### Synopsis
 

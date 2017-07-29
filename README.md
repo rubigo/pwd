@@ -26,10 +26,10 @@ name | current version | description
 
 ## Specification
 
-Specification is partly derived from the *The Open Group Base Specifications
+Specification is adapted from the *The Open Group Base Specifications
 Issue 7*, [section XCU
-`pwd`](http://pubs.opengroup.org/onlinepubs/9699919799/nframe.html), since we
-(try to) implement the POSIX standard.
+`pwd`](http://pubs.opengroup.org/onlinepubs/9699919799/nframe.html), to be as
+compatible with the POSIX standard as possible (or as practical).
 
 ### Synopsis
 
@@ -38,7 +38,8 @@ Issue 7*, [section XCU
 ### Description
 
 The `pwd` utility shall write to standard output an absolute pathname of the
-current working directory, which does not contain the filenames dot or dot-dot.
+current working directory, which does not contain the filenames `‘.’` or 
+`‘..’`.
 
 ### Options
 
@@ -46,6 +47,10 @@ flag | description
 ---: | :----------
 `-L`, `--logical` | If the `PWD` environment variable contains an absolute pathname of the current directory and the pathname does not contain any components that are `‘.’` or `‘..’`, `pwd` shall write this pathname to standard output, except that if the `PWD` environment variable is longer than `PATH_MAX` bytes including the terminating null, it is unspecified whether pwd writes this pathname to standard output or behaves as if the `-P` option had been specified. Otherwise, the `-L` option shall behave as the `-P` option.
 `-P`, `--physical` | The pathname written to standard output shall not contain any components that refer to files of type symbolic link. If there are multiple pathnames that the pwd utility could write to standard output, one beginning with a single slash character `‘/’` and one or more beginning with two slash characters `‘//’`, then it shall write the pathname beginning with a single slash character. The pathname shall not contain any unnecessary slash characters after the leading one or two slash characters. 
+
+The POSIX standard only mandates that the short options `-L` and `-P` are
+present, however for convenience we also allow the long versions `--logical` and
+`--physical`.
 
 In addition to this, the POSIX standard specifies that:
 
@@ -64,11 +69,11 @@ variable | usage
 -------: | :----
 `PWD` | An absolute pathname of the current working directory. If an application sets or unsets the value of `PWD`, the behavior of `pwd` is unspecified.
 
-### Standard OutputSTDOUT
+### Standard Output
 
 The `pwd` utility output is an absolute pathname of the current working directory:
 
->   `“%s\n”`, *<directory pathname>*
+>   `“%s\n”`, *&lt;directory pathname&gt;*
 
 ### Exit Status
 

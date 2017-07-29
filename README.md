@@ -44,14 +44,10 @@ current working directory, which does not contain the filenames `‘.’` or
 
 ### Options
 
-<!-- note to reader: the &#8209 character in the table represents a unicode
-non-breaking hypen. we need to use that to ensure that the name of the flag is
-not broken on the hyphen. -->
-
  flag | description
 :---: | :----------
 <span style="white-space: nowrap;">`-L`<br>`--logical`</span> | If the `PWD` environment variable contains an absolute pathname of the current directory and the pathname does not contain any components that are `‘.’` or `‘..’`, `pwd` shall write this pathname to standard output, except that if the `PWD` environment variable is longer than `PATH_MAX` bytes including the terminating null, it is unspecified whether pwd writes this pathname to standard output or behaves as if the `-P` option had been specified. Otherwise, the `-L` option shall behave as the `-P` option.
-`-P`<br><code>&#8209;&#8209;physical</code> | The pathname written to standard output shall not contain any components that refer to files of type symbolic link. If there are multiple pathnames that the pwd utility could write to standard output, one beginning with a single slash character `‘/’` and one or more beginning with two slash characters `‘//’`, then it shall write the pathname beginning with a single slash character. The pathname shall not contain any unnecessary slash characters after the leading one or two slash characters. 
+<span style="white-space: nowrap;">`-P`<br>`--physical`</span> | The pathname written to standard output shall not contain any components that refer to files of type symbolic link. If there are multiple pathnames that the pwd utility could write to standard output, one beginning with a single slash character `‘/’` and one or more beginning with two slash characters `‘//’`, then it shall write the pathname beginning with a single slash character. The pathname shall not contain any unnecessary slash characters after the leading one or two slash characters. 
 
 The POSIX standard only mandates that the short options `-L` and `-P` are
 present, however for convenience we also allow the long versions `--logical` and

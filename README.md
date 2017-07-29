@@ -20,3 +20,6 @@ name | current version | description
 ---: | :-------------: | :----------
 [clap](https://github.com/kbknapp/clap-rs) | [![Crates.io](https://img.shields.io/crates/v/clap.svg)](https://crates.io/crates/clap) | *Used to parse command-line arguments*
 
+# Todo
+
+- [ ] test everything

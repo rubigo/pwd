@@ -13,15 +13,25 @@ pub const DESCRIPTION: &'static str     = "Print full path to the current \
 working directory.";
 
 use std::path::PathBuf;
-use std::env::current_dir;
-use std::io::Result;
+use std::env;
+use std::io::{Result, Error, ErrorKind};
 
 /// Returns the logical current working directory.
 pub fn logical() -> Result<PathBuf> {
-    current_dir()
+    let pwd = env::var_os("PWD");
+
+    // make sure that PWD exists
+    if pwd.is_none() {
+        return Err(Error::new(
+            ErrorKind::InvalidData, 
+            "The PWD environment variable is not set."));
+    }
+
+    // make sure that PWD doesn't contain 
+    env::current_dir()
 }
 
 /// Returns the physical current working directory.
-pub fn physical() -> String {
-    String::new()
+pub fn physical() -> Result<PathBuf> {
+    env::current_dir()
 }

@@ -23,12 +23,27 @@ pub fn logical() -> Result<PathBuf> {
     // make sure that PWD exists
     if pwd.is_none() {
         return Err(Error::new(
-            ErrorKind::InvalidData, 
+            ErrorKind::InvalidData,
             "The PWD environment variable is not set."));
     }
 
-    // make sure that PWD doesn't contain 
-    env::current_dir()
+    let pwd = pwd.unwrap();
+
+    // create pathbuf from given pwd
+    let path = PathBuf::from(pwd);
+
+    // validate pathbuf
+    if !path.is_absolute() {
+        return Err(Error::new(
+            ErrorKind::InvalidData,
+            "The PWD environment variable is set to a relative path."));
+    }
+
+    // make sure that PWD doesn't contain
+    // TODO
+
+
+    Ok(path)
 }
 
 /// Returns the physical current working directory.
